@@ -1,6 +1,7 @@
 package com.zheng.pojo.d;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -24,61 +25,61 @@ public class File {
     /**
      * 产品编号
      */
-    @TableId(value = "PRODUCT_ID",type = IdType.AUTO)
+    @TableField(value = "PRODUCT_ID")
     private String productId;
 
     /**
      * 产品名称
      */
-    @TableId(value = "PRODUCT_NAME",type = IdType.AUTO)
+    @TableField(value = "PRODUCT_NAME")
     private String productName;
 
     /**
      * 制造商
      */
-    @TableId(value = "FACTORY_ID",type = IdType.AUTO)
+    @TableField(value = "FACTORY_ID")
     private String factoryName;
 
     /**
      * 产品I级分类编号
      */
-    @TableId(value = "FIRST_KIND_ID",type = IdType.AUTO)
+    @TableField(value = "FIRST_KIND_ID")
     private String firstKindId;
 
     /**
      * 产品I级分类名称
      */
-    @TableId(value = "FIRST_KIND_NAME",type = IdType.AUTO)
+    @TableField(value = "FIRST_KIND_NAME")
     private String firstKindName;
 
     /**
      * 产品II级分类编号
      */
-    @TableId(value = "SECOND_KIND_ID",type = IdType.AUTO)
+    @TableField(value = "SECOND_KIND_ID")
     private String secondKindId;
 
     /**
      * 产品II级分类名称
      */
-    @TableId(value = "PRODUCT_ID",type = IdType.AUTO)
+    @TableField(value = "PRODUCT_ID")
     private String secondKindName;
 
     /**
      * 产品III级分类编号
      */
-    @TableId(value = "THIRD_KIND_ID",type = IdType.AUTO)
+    @TableField(value = "THIRD_KIND_ID")
     private String thirdKindId;
 
     /**
      * 产品III级分类名称
      */
-    @TableId(value = "THIRD_KIND_NAME",type = IdType.AUTO)
+    @TableField(value = "THIRD_KIND_NAME")
     private String thirdKindName;
 
     /**
      * 产品简称
      */
-    @TableId(value = "PRODUCT_NICK",type = IdType.AUTO)
+    @TableField(value = "PRODUCT_NICK")
     private String productNick;
 
     /**
@@ -86,7 +87,7 @@ public class File {
      * Y001-1: 商品
      * Y001-2: 物料
      */
-    @TableId(value = "TYPE",type = IdType.AUTO)
+    @TableField(value = "TYPE")
     private String type;
 
     /**
@@ -95,109 +96,109 @@ public class File {
      * D001-2: 中档
      * D001-3: 低档
      */
-    @TableId(value = "PRODUCT_CLASS",type = IdType.AUTO)
+    @TableField(value = "PRODUCT_CLASS")
     private String productClass;
 
     /**
      * 计量单位
      */
-    @TableId(value = "PERSONAL_UNIT",type = IdType.AUTO)
+    @TableField(value = "PERSONAL_UNIT")
     private String personalUnit;
 
     /**
      * 计量值
      */
-    @TableId(value = "PERSONAL_VALUE",type = IdType.AUTO)
+    @TableField(value = "PERSONAL_VALUE")
     private String personalValue;
 
     /**
      * 供应商集合
      */
-    @TableId(value = "PROVIDER_GROUP",type = IdType.AUTO)
+    @TableField(value = "PROVIDER_GROUP")
     private String providerGroup;
 
     /**
      * 保修期
      */
-    @TableId(value = "WARRANTY",type = IdType.AUTO)
+    @TableField(value = "WARRANTY")
     private String warranty;
 
     /**
      * 替代品名称
      */
-    @TableId(value = "TWIN_NAME",type = IdType.AUTO)
+    @TableField(value = "TWIN_NAME")
     private String twinName;
 
     /**
      * 替代品编号
      */
-    @TableId(value = "TWIN_ID",type = IdType.AUTO)
+    @TableField(value = "TWIN_ID")
     private String twinId;
 
     /**
      * 生命周期
      */
-    @TableId(value = "LIFECYCLE",type = IdType.AUTO)
+    @TableField(value = "LIFECYCLE")
     private String lifecycle;
 
     /**
      * 市场单价
      */
-    @TableId(value = "LIST_PRICE",type = IdType.AUTO)
+    @TableField(value = "LIST_PRICE")
     private BigDecimal listPrice;
 
     /**
      * 计划成本单价
      */
-    @TableId(value = "COST_PRICE",type = IdType.AUTO)
+    @TableField(value = "COST_PRICE")
     private BigDecimal costPrice;
 
     /**
      * 成本单价
      */
-    @TableId(value = "REAL_COST_PRICE",type = IdType.AUTO)
+    @TableField(value = "REAL_COST_PRICE")
     private BigDecimal realCostPrice;
 
     /**
      * 单位
      */
-    @TableId(value = "AMOUNT_UNIT",type = IdType.AUTO)
+    @TableField(value = "AMOUNT_UNIT")
     private String amountUnit;
 
     /**
      * 产品描述
      */
-    @TableId(value = "PRODUCT_DESCRIBE",type = IdType.AUTO)
+    @TableField(value = "PRODUCT_DESCRIBE")
     private String productDescribe;
 
     /**
      * 产品经理
      */
-    @TableId(value = "RESPONSIBLE_PERSON",type = IdType.AUTO)
+    @TableField(value = "RESPONSIBLE_PERSON")
     private String responsiblePerson;
 
     /**
      * 登记人
      */
-    @TableId(value = "REGISTER",type = IdType.AUTO)
+    @TableField(value = "REGISTER")
     private String register;
 
     /**
      * 建档时间
      */
-    @TableId(value = "REGISTER_TIME",type = IdType.AUTO)
+    @TableField(value = "REGISTER_TIME")
     private Date registerTime;
 
     /**
      * 复核人
      */
-    @TableId(value = "CHECKER",type = IdType.AUTO)
+    @TableField(value = "CHECKER")
     private String checker;
 
     /**
      * 复核时间
      */
-    @TableId(value = "CHECK_TIME",type = IdType.AUTO)
+    @TableField(value = "CHECK_TIME")
     private Date checkTime;
 
     /*
@@ -206,19 +207,19 @@ public class File {
      *  S001-1: 审核通过
      *  S001-2: 审核不通过
      */
-    @TableId(value = "CHECK_TAG",type = IdType.AUTO)
+    @TableField(value = "CHECK_TAG")
     private String checkTag;
 
     /**
      * 变更人
      */
-    @TableId(value = "CHANGER",type = IdType.AUTO)
+    @TableField(value = "CHANGER")
     private String changer;
 
     /**
      * 变更时间
      */
-    @TableId(value = "CHANGE_TIME",type = IdType.AUTO)
+    @TableField(value = "CHANGE_TIME")
     private Date changeTime;
 
     /**
@@ -226,7 +227,7 @@ public class File {
      *  D002-0: 未变更
      *  D002-1: 已变更
      */
-    @TableId(value = "CHANGE_TAG",type = IdType.AUTO)
+    @TableField(value = "CHANGE_TAG")
     private String changeTag;
 
     /**
@@ -234,13 +235,13 @@ public class File {
      * J001-0：未变更
      * J001-1：已变更
      */
-    @TableId(value = "PRICE_CHANGE_TAG",type = IdType.AUTO)
+    @TableField(value = "PRICE_CHANGE_TAG")
     private String priceChangeTag;
 
     /**
      * 档案变更累计
      */
-    @TableId(value = "FILE_CHANGE_AMOUNT",type = IdType.AUTO)
+    @TableField(value = "FILE_CHANGE_AMOUNT")
     private Integer fileChangeAmount;
 
     /**
@@ -248,7 +249,7 @@ public class File {
      *      C001-0: 未删除
      *      C001-1: 已删除
      */
-    @TableId(value = "DELETE_TAG",type = IdType.AUTO)
+    @TableField(value = "DELETE_TAG")
     private String deleteTag;
 
     /**
@@ -256,7 +257,7 @@ public class File {
      *   W001-0: 未设计
      *   W001-1: 已设计
      */
-    @TableId(value = "DESIGN_MODULE_TAG",type = IdType.AUTO)
+    @TableField(value = "DESIGN_MODULE_TAG")
     private String designModuleTag;
 
     /**
@@ -264,7 +265,7 @@ public class File {
      *  G001-0: 未设计
      *  G001-1: 已设计
      */
-    @TableId(value = "DESIGN_PROCEDURE_TAG",type = IdType.AUTO)
+    @TableField(value = "DESIGN_PROCEDURE_TAG")
     private String designProcedureTag;
 
     /**
@@ -272,7 +273,7 @@ public class File {
      * K001-0: 未设计
      * K001-1: 已设计
      */
-    @TableId(value = "DESIGN_CELL_TAG",type = IdType.AUTO)
+    @TableField(value = "DESIGN_CELL_TAG")
     private String designCellTag;
 
    }

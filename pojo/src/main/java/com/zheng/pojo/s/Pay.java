@@ -1,176 +1,129 @@
 package com.zheng.pojo.s;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * 	出库
+ */
+@Data
+@TableName("s_pay")
 public class Pay {
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 出库单编号
+     */
+    @TableField(value = "pay_id")
     private String payId;
 
+    /**
+     * 出库人
+     */
+    @TableField(value = "storer")
     private String storer;
 
+    /**
+     * 出库理由
+     * c002-1: 生产领料
+     * c002-2: 赠送
+     * c002-3: 内部借领
+     * c002-4: 其他借领
+     */
+    @TableField(value = "reason")
     private String reason;
 
+    /**
+     * 出库详细理由
+     */
+    @TableField(value = "reasonexact")
     private String reasonexact;
 
+    /**
+     * 总件数
+     */
+    @TableField(value = "amount_sum")
     private BigDecimal amountSum;
 
+    /**
+     * 总金额
+     */
+    @TableField(value = "cost_price_sum")
     private BigDecimal costPriceSum;
 
+    /**
+     * 确认出库总件数
+     */
+    @TableField(value = "paid_amount_sum")
     private BigDecimal paidAmountSum;
 
+    /**
+     * 备注
+     */
+    @TableField(value = "remark")
     private String remark;
 
+    /**
+     * 登记人
+     */
+    @TableField(value = "register")
     private String register;
 
+    /**
+     * 登记时间
+     */
+    @TableField(value = "register_time")
     private Date registerTime;
 
+    /**
+     * 复核人
+     */
+    @TableField(value = "checker")
     private String checker;
 
+    /**
+     * 复核时间
+     */
+    @TableField(value = "check_time\tdate\t复核时间\t")
     private Date checkTime;
 
+    /**
+     * 审核标志
+     * s001-0: 等待审核
+     * s001-1: 审核通过
+     * s001-2: 审核不通过
+     */
+    @TableField(value = "check_tag")
     private String checkTag;
 
+    /**
+     * 调度人
+     */
+    @TableField(value = "attemper")
     private String attemper;
 
+    /**
+     * 调度时间
+     */
+    @TableField(value = "attemper_time")
     private Date attemperTime;
 
+    /**
+     * 库存标志
+     * k002-1: 已登记
+     * k002-2: 已调度
+     */
+    @TableField(value = "pay_tag")
     private String payTag;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getPayId() {
-        return payId;
-    }
-
-    public void setPayId(String payId) {
-        this.payId = payId == null ? null : payId.trim();
-    }
-
-    public String getStorer() {
-        return storer;
-    }
-
-    public void setStorer(String storer) {
-        this.storer = storer == null ? null : storer.trim();
-    }
-
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason == null ? null : reason.trim();
-    }
-
-    public String getReasonexact() {
-        return reasonexact;
-    }
-
-    public void setReasonexact(String reasonexact) {
-        this.reasonexact = reasonexact == null ? null : reasonexact.trim();
-    }
-
-    public BigDecimal getAmountSum() {
-        return amountSum;
-    }
-
-    public void setAmountSum(BigDecimal amountSum) {
-        this.amountSum = amountSum;
-    }
-
-    public BigDecimal getCostPriceSum() {
-        return costPriceSum;
-    }
-
-    public void setCostPriceSum(BigDecimal costPriceSum) {
-        this.costPriceSum = costPriceSum;
-    }
-
-    public BigDecimal getPaidAmountSum() {
-        return paidAmountSum;
-    }
-
-    public void setPaidAmountSum(BigDecimal paidAmountSum) {
-        this.paidAmountSum = paidAmountSum;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
-
-    public String getRegister() {
-        return register;
-    }
-
-    public void setRegister(String register) {
-        this.register = register == null ? null : register.trim();
-    }
-
-    public Date getRegisterTime() {
-        return registerTime;
-    }
-
-    public void setRegisterTime(Date registerTime) {
-        this.registerTime = registerTime;
-    }
-
-    public String getChecker() {
-        return checker;
-    }
-
-    public void setChecker(String checker) {
-        this.checker = checker == null ? null : checker.trim();
-    }
-
-    public Date getCheckTime() {
-        return checkTime;
-    }
-
-    public void setCheckTime(Date checkTime) {
-        this.checkTime = checkTime;
-    }
-
-    public String getCheckTag() {
-        return checkTag;
-    }
-
-    public void setCheckTag(String checkTag) {
-        this.checkTag = checkTag == null ? null : checkTag.trim();
-    }
-
-    public String getAttemper() {
-        return attemper;
-    }
-
-    public void setAttemper(String attemper) {
-        this.attemper = attemper == null ? null : attemper.trim();
-    }
-
-    public Date getAttemperTime() {
-        return attemperTime;
-    }
-
-    public void setAttemperTime(Date attemperTime) {
-        this.attemperTime = attemperTime;
-    }
-
-    public String getPayTag() {
-        return payTag;
-    }
-
-    public void setPayTag(String payTag) {
-        this.payTag = payTag == null ? null : payTag.trim();
-    }
-}
+  }

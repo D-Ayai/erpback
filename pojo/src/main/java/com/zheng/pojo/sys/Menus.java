@@ -1,103 +1,77 @@
 package com.zheng.pojo.sys;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
+@Data
+@TableName("sys_menus")
+/**
+ * 菜单
+ */
 public class Menus {
+
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 父级序号
+     */
+    @TableField("PARENT_ID")
     private Integer parentId;
 
+    /**
+     * 排序
+     */
+    @TableField("SEQ")
     private Integer seq;
 
+    /**
+     * 菜单名称
+     */
+    @TableField("name")
     private String name;
 
+    /**
+     * 提示信息
+     */
+    @TableField("tip")
     private String tip;
 
+    /**
+     * 菜单说明
+     */
+    @TableField("descn")
     private String descn;
 
+    /**
+     * 图片地址
+     */
+    @TableField("image_url")
     private String imageUrl;
 
+    /**
+     * 链接地址
+     */
+    @TableField("link_url")
     private String linkUrl;
 
+    /**
+     * 目标窗口
+     */
+    @TableField("target")
     private String target;
 
+    /**
+     * 是否可用
+     */
+    @TableField("status")
     private String status;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
-    }
-
-    public Integer getSeq() {
-        return seq;
-    }
-
-    public void setSeq(Integer seq) {
-        this.seq = seq;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getTip() {
-        return tip;
-    }
-
-    public void setTip(String tip) {
-        this.tip = tip == null ? null : tip.trim();
-    }
-
-    public String getDescn() {
-        return descn;
-    }
-
-    public void setDescn(String descn) {
-        this.descn = descn == null ? null : descn.trim();
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl == null ? null : imageUrl.trim();
-    }
-
-    public String getLinkUrl() {
-        return linkUrl;
-    }
-
-    public void setLinkUrl(String linkUrl) {
-        this.linkUrl = linkUrl == null ? null : linkUrl.trim();
-    }
-
-    public String getTarget() {
-        return target;
-    }
-
-    public void setTarget(String target) {
-        this.target = target == null ? null : target.trim();
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
-    }
 }

@@ -1,156 +1,107 @@
 package com.zheng.pojo.m;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ *  	生产工序过程记录
+ */
+@Data
+@TableName("m_proceduring")
 public class Proceduring {
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 父级序号
+     */
+    @TableField(value = "parent_id")
     private Integer parentId;
 
+    /**
+     * 工序序号
+     */
+    @TableField(value = "details_number")
     private Integer detailsNumber;
 
+    /**
+     * 工序编号
+     */
+    @TableField(value = "procedure_id")
     private String procedureId;
 
+    /**
+     * 工序名称
+     */
+    @TableField(value = "procedure_name")
     private String procedureName;
 
+    /**
+     * 本次工时数
+     */
+    @TableField(value = "labour_hour_amount")
     private BigDecimal labourHourAmount;
 
+    /**
+     * 单位工时成本
+     */
+    @TableField(value = "cost_price")
     private BigDecimal costPrice;
 
+    /**
+     * 工时成本小计
+     */
+    @TableField(value = "subtotal")
     private BigDecimal subtotal;
 
+    /**
+     * 工序描述
+     */
+    @TableField(value = "procedure_describe")
     private String procedureDescribe;
 
+    /**
+     * 登记次数
+     */
+    @TableField(value = "reg_count")
     private BigDecimal regCount;
 
+    /**
+     * 负责人
+     */
+    @TableField(value = "procedure_responsible_person")
     private String procedureResponsiblePerson;
 
+    /**
+     * 登记
+     */
+    @TableField(value = "register")
     private String register;
 
+    /**
+     * 登记时间
+     */
+    @TableField(value = "register_time")
     private Date registerTime;
 
+    /**
+     * 审核人
+     */
+    @TableField(value = "checker")
     private String checker;
 
+    /**
+     * 审核时间
+     */
+    @TableField(value = "check_time")
     private Date checkTime;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
-    }
-
-    public Integer getDetailsNumber() {
-        return detailsNumber;
-    }
-
-    public void setDetailsNumber(Integer detailsNumber) {
-        this.detailsNumber = detailsNumber;
-    }
-
-    public String getProcedureId() {
-        return procedureId;
-    }
-
-    public void setProcedureId(String procedureId) {
-        this.procedureId = procedureId == null ? null : procedureId.trim();
-    }
-
-    public String getProcedureName() {
-        return procedureName;
-    }
-
-    public void setProcedureName(String procedureName) {
-        this.procedureName = procedureName == null ? null : procedureName.trim();
-    }
-
-    public BigDecimal getLabourHourAmount() {
-        return labourHourAmount;
-    }
-
-    public void setLabourHourAmount(BigDecimal labourHourAmount) {
-        this.labourHourAmount = labourHourAmount;
-    }
-
-    public BigDecimal getCostPrice() {
-        return costPrice;
-    }
-
-    public void setCostPrice(BigDecimal costPrice) {
-        this.costPrice = costPrice;
-    }
-
-    public BigDecimal getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(BigDecimal subtotal) {
-        this.subtotal = subtotal;
-    }
-
-    public String getProcedureDescribe() {
-        return procedureDescribe;
-    }
-
-    public void setProcedureDescribe(String procedureDescribe) {
-        this.procedureDescribe = procedureDescribe == null ? null : procedureDescribe.trim();
-    }
-
-    public BigDecimal getRegCount() {
-        return regCount;
-    }
-
-    public void setRegCount(BigDecimal regCount) {
-        this.regCount = regCount;
-    }
-
-    public String getProcedureResponsiblePerson() {
-        return procedureResponsiblePerson;
-    }
-
-    public void setProcedureResponsiblePerson(String procedureResponsiblePerson) {
-        this.procedureResponsiblePerson = procedureResponsiblePerson == null ? null : procedureResponsiblePerson.trim();
-    }
-
-    public String getRegister() {
-        return register;
-    }
-
-    public void setRegister(String register) {
-        this.register = register == null ? null : register.trim();
-    }
-
-    public Date getRegisterTime() {
-        return registerTime;
-    }
-
-    public void setRegisterTime(Date registerTime) {
-        this.registerTime = registerTime;
-    }
-
-    public String getChecker() {
-        return checker;
-    }
-
-    public void setChecker(String checker) {
-        this.checker = checker == null ? null : checker.trim();
-    }
-
-    public Date getCheckTime() {
-        return checkTime;
-    }
-
-    public void setCheckTime(Date checkTime) {
-        this.checkTime = checkTime;
-    }
 }

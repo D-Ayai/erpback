@@ -1,206 +1,145 @@
 package com.zheng.pojo.m;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
+
+/**
+ * 	生产总表
+ */
+@Data
+@TableName("m_manufacture")
 public class Manufacture {
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 派工单编号
+     */
+    @TableField(value = "manufacture_id")
     private String manufactureId;
 
+    /**
+     * 产品编号
+     */
+    @TableField(value = "product_id")
     private String productId;
 
+    /**
+     * 产品名称
+     */
+    @TableField(value = "product_name")
     private String productName;
 
+    /**
+     * 投产数量
+     */
+    @TableField(value = "amount")
     private BigDecimal amount;
 
+    /**
+     * 合格数量
+     */
+    @TableField(value = "tested_amount")
     private BigDecimal testedAmount;
 
+    /**
+     * 合格数量
+     */
+    @TableField(value = "apply_id_group")
     private String applyIdGroup;
 
+    /**
+     * 产品描述
+     */
+    @TableField(value = "product_describe")
     private String productDescribe;
 
+    /**
+     * 设计物料总成本
+     */
+    @TableField(value = "module_cost_price_sum")
     private BigDecimal moduleCostPriceSum;
 
+    /**
+     * 实际物料总成本
+     */
+    @TableField(value = "real_module_cost_price_sum")
     private BigDecimal realModuleCostPriceSum;
 
+    /**
+     * 设计工时总成本
+     */
+    @TableField(value = "labour_cost_price_sum")
     private BigDecimal labourCostPriceSum;
 
+    /**
+     * 实际工时总成本
+     */
+    @TableField(value = "real_labour_cost_price_sum")
     private BigDecimal realLabourCostPriceSum;
 
+    /**
+     * 工单制定人
+     */
+    @TableField(value = "designer")
     private String designer;
 
+    /**
+     * 登记人
+     */
+    @TableField(value = "register")
     private String register;
 
+    /**
+     * 登记时间
+     */
+    @TableField(value = "register_time")
     private Date registerTime;
 
+    /**
+     * 审核人
+     */
+    @TableField(value = "checker")
     private String checker;
 
+    /**
+     * 工单制定人
+     */
+    @TableField(value = "check_time")
     private Date checkTime;
 
+    /**
+     * 备注
+     */
+    @TableField(value = "remark")
     private String remark;
 
+    /**
+     * 审核标志
+     * s001-0: 等待审核
+     * s001-1: 审核通过
+     * s001-2: 审核不通过
+     */
+    @TableField(value = "check_tag")
     private String checkTag;
 
+    /**
+     * 生产过程标志
+     * s002-0: 待登记
+     * s002-1: 未审核
+     * s002-2: 已完工
+     */
+    @TableField(value = "manufacture_procedure_tag")
     private String manufactureProcedureTag;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getManufactureId() {
-        return manufactureId;
-    }
-
-    public void setManufactureId(String manufactureId) {
-        this.manufactureId = manufactureId == null ? null : manufactureId.trim();
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId == null ? null : productId.trim();
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName == null ? null : productName.trim();
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public BigDecimal getTestedAmount() {
-        return testedAmount;
-    }
-
-    public void setTestedAmount(BigDecimal testedAmount) {
-        this.testedAmount = testedAmount;
-    }
-
-    public String getApplyIdGroup() {
-        return applyIdGroup;
-    }
-
-    public void setApplyIdGroup(String applyIdGroup) {
-        this.applyIdGroup = applyIdGroup == null ? null : applyIdGroup.trim();
-    }
-
-    public String getProductDescribe() {
-        return productDescribe;
-    }
-
-    public void setProductDescribe(String productDescribe) {
-        this.productDescribe = productDescribe == null ? null : productDescribe.trim();
-    }
-
-    public BigDecimal getModuleCostPriceSum() {
-        return moduleCostPriceSum;
-    }
-
-    public void setModuleCostPriceSum(BigDecimal moduleCostPriceSum) {
-        this.moduleCostPriceSum = moduleCostPriceSum;
-    }
-
-    public BigDecimal getRealModuleCostPriceSum() {
-        return realModuleCostPriceSum;
-    }
-
-    public void setRealModuleCostPriceSum(BigDecimal realModuleCostPriceSum) {
-        this.realModuleCostPriceSum = realModuleCostPriceSum;
-    }
-
-    public BigDecimal getLabourCostPriceSum() {
-        return labourCostPriceSum;
-    }
-
-    public void setLabourCostPriceSum(BigDecimal labourCostPriceSum) {
-        this.labourCostPriceSum = labourCostPriceSum;
-    }
-
-    public BigDecimal getRealLabourCostPriceSum() {
-        return realLabourCostPriceSum;
-    }
-
-    public void setRealLabourCostPriceSum(BigDecimal realLabourCostPriceSum) {
-        this.realLabourCostPriceSum = realLabourCostPriceSum;
-    }
-
-    public String getDesigner() {
-        return designer;
-    }
-
-    public void setDesigner(String designer) {
-        this.designer = designer == null ? null : designer.trim();
-    }
-
-    public String getRegister() {
-        return register;
-    }
-
-    public void setRegister(String register) {
-        this.register = register == null ? null : register.trim();
-    }
-
-    public Date getRegisterTime() {
-        return registerTime;
-    }
-
-    public void setRegisterTime(Date registerTime) {
-        this.registerTime = registerTime;
-    }
-
-    public String getChecker() {
-        return checker;
-    }
-
-    public void setChecker(String checker) {
-        this.checker = checker == null ? null : checker.trim();
-    }
-
-    public Date getCheckTime() {
-        return checkTime;
-    }
-
-    public void setCheckTime(Date checkTime) {
-        this.checkTime = checkTime;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
-
-    public String getCheckTag() {
-        return checkTag;
-    }
-
-    public void setCheckTag(String checkTag) {
-        this.checkTag = checkTag == null ? null : checkTag.trim();
-    }
-
-    public String getManufactureProcedureTag() {
-        return manufactureProcedureTag;
-    }
-
-    public void setManufactureProcedureTag(String manufactureProcedureTag) {
-        this.manufactureProcedureTag = manufactureProcedureTag == null ? null : manufactureProcedureTag.trim();
-    }
 }

@@ -1,166 +1,120 @@
 package com.zheng.pojo.m;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * 产品档案
+ */
+@Data
+@TableName("m_apply")
 public class Apply {
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 生产计划编号
+     */
+    @TableField(value = "apply_id")
     private String applyId;
 
+    /**
+     * 产品编号
+     */
+    @TableField(value = "product_id")
     private String productId;
 
+    /**
+     * 产品名称
+     */
+    @TableField(value = "product_name")
     private String productName;
 
+    /**
+     * 产品描述
+     */
+    @TableField(value = "product_describe")
     private String productDescribe;
 
+    /**
+     * 用途类型
+     */
+    @TableField(value = "type")
     private String type;
 
+    /**
+     * 数量
+     */
+    @TableField(value = "amount")
     private BigDecimal amount;
 
+    /**
+     * 设计人
+     */
+    @TableField(value = "designer")
     private String designer;
 
+    /**
+     * 备注
+     */
+    @TableField(value = "remark")
     private String remark;
 
+    /**
+     * 登记人
+     */
+    @TableField(value = "register")
     private String register;
 
+    /**
+     * 登记时间
+     */
+    @TableField(value = "register")
     private Date registerTime;
 
+    /**
+     * 复核人
+     */
+    @TableField(value = "checker")
     private String checker;
 
+    /**
+     * 审核意见
+     */
+    @TableField(value = "check_suggestion")
     private String checkSuggestion;
 
+    /**
+     * 审核时间
+     */
+    @TableField(value = "check_time")
     private Date checkTime;
 
+    /**
+     * 审核标志
+     * s001-0: 等待审核
+     * s001-1: 审核通过
+     * s001-2: 审核不通过
+     */
+    @TableField(value = "check_tag")
     private String checkTag;
 
+    /**
+     * 派工标志
+     * p001-0: 未派工
+     * p001-1: 已派工
+     */
+    @TableField(value = "manufacture_tag")
     private String manufactureTag;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getApplyId() {
-        return applyId;
-    }
-
-    public void setApplyId(String applyId) {
-        this.applyId = applyId == null ? null : applyId.trim();
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId == null ? null : productId.trim();
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName == null ? null : productName.trim();
-    }
-
-    public String getProductDescribe() {
-        return productDescribe;
-    }
-
-    public void setProductDescribe(String productDescribe) {
-        this.productDescribe = productDescribe == null ? null : productDescribe.trim();
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public String getDesigner() {
-        return designer;
-    }
-
-    public void setDesigner(String designer) {
-        this.designer = designer == null ? null : designer.trim();
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
-
-    public String getRegister() {
-        return register;
-    }
-
-    public void setRegister(String register) {
-        this.register = register == null ? null : register.trim();
-    }
-
-    public Date getRegisterTime() {
-        return registerTime;
-    }
-
-    public void setRegisterTime(Date registerTime) {
-        this.registerTime = registerTime;
-    }
-
-    public String getChecker() {
-        return checker;
-    }
-
-    public void setChecker(String checker) {
-        this.checker = checker == null ? null : checker.trim();
-    }
-
-    public String getCheckSuggestion() {
-        return checkSuggestion;
-    }
-
-    public void setCheckSuggestion(String checkSuggestion) {
-        this.checkSuggestion = checkSuggestion == null ? null : checkSuggestion.trim();
-    }
-
-    public Date getCheckTime() {
-        return checkTime;
-    }
-
-    public void setCheckTime(Date checkTime) {
-        this.checkTime = checkTime;
-    }
-
-    public String getCheckTag() {
-        return checkTag;
-    }
-
-    public void setCheckTag(String checkTag) {
-        this.checkTag = checkTag == null ? null : checkTag.trim();
-    }
-
-    public String getManufactureTag() {
-        return manufactureTag;
-    }
-
-    public void setManufactureTag(String manufactureTag) {
-        this.manufactureTag = manufactureTag == null ? null : manufactureTag.trim();
-    }
 }

@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("d_config_file_kind")
+@TableName("sys_Users")
 /**
  * 用户表
  */
@@ -38,7 +38,7 @@ public class Users {
     private String status;
 
     /**
-     *
+     * 图片路径
      */
     @TableField("PHOTO_PATH")
     private String photoPath;

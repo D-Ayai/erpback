@@ -1,115 +1,85 @@
 package com.zheng.pojo.m;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.math.BigDecimal;
 
+/**
+ *   产品生产工序物料明细
+ */
+@Data
+@TableName("m_design_procedure_module")
 public class DesignProcedureModule {
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 父级序号
+     */
+    @TableField(value = "parent_id")
     private Integer parentId;
 
+    /**
+     * 工序物料序号
+     */
+    @TableField(value = "details_number")
     private Integer detailsNumber;
 
+    /**
+     * 物料编号
+     */
+    @TableField(value = "product_id")
     private String productId;
 
+    /**
+     * 物料名称
+     */
+    @TableField(value = "product_name")
     private String productName;
 
+    /**
+     * 用途类型
+     */
+    @TableField(value = "type")
     private String type;
 
+    /**
+     * 本工序数量
+     */
+    @TableField(value = "amount")
     private BigDecimal amount;
 
+    /**
+     * 描述
+     */
+    @TableField(value = "product_describe")
     private String productDescribe;
 
+    /**
+     * 单位
+     */
+    @TableField(value = "amount_unit")
     private String amountUnit;
 
+    /**
+     * 单价
+     */
+    @TableField(value = "cost_price")
     private BigDecimal costPrice;
 
+    /**
+     * 小计
+     */
+    @TableField(value = "subtotal")
     private BigDecimal subtotal;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public Integer getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
-    }
-
-    public Integer getDetailsNumber() {
-        return detailsNumber;
-    }
-
-    public void setDetailsNumber(Integer detailsNumber) {
-        this.detailsNumber = detailsNumber;
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId == null ? null : productId.trim();
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName == null ? null : productName.trim();
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public String getProductDescribe() {
-        return productDescribe;
-    }
-
-    public void setProductDescribe(String productDescribe) {
-        this.productDescribe = productDescribe == null ? null : productDescribe.trim();
-    }
-
-    public String getAmountUnit() {
-        return amountUnit;
-    }
-
-    public void setAmountUnit(String amountUnit) {
-        this.amountUnit = amountUnit == null ? null : amountUnit.trim();
-    }
-
-    public BigDecimal getCostPrice() {
-        return costPrice;
-    }
-
-    public void setCostPrice(BigDecimal costPrice) {
-        this.costPrice = costPrice;
-    }
-
-    public BigDecimal getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(BigDecimal subtotal) {
-        this.subtotal = subtotal;
-    }
 }

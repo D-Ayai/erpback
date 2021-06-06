@@ -1,165 +1,121 @@
 package com.zheng.pojo.m;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.math.BigDecimal;
 
+/**
+ * 	生产工序表
+ */
+@Data
+@TableName("m_procedure")
 public class Procedure {
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 父级序号
+     */
+    @TableField(value = "parent_id")
     private Integer parentId;
 
+    /**
+     * 工序序号
+     */
+    @TableField(value = "details_number")
     private Integer detailsNumber;
 
+    /**
+     * 工序编号
+     */
+    @TableField(value = "procedure_id")
     private String procedureId;
 
+    /**
+     * 工序名称
+     */
+    @TableField(value = "procedure_name")
     private String procedureName;
 
+    /**
+     * 设计工时数
+     */
+    @TableField(value = "labour_hour_amount")
     private BigDecimal labourHourAmount;
 
+    /**
+     * 实际工时数
+     */
+    @TableField(value = "real_labour_hour_amount")
     private BigDecimal realLabourHourAmount;
 
+    /**
+     * 设计工时成本
+     */
+    @TableField(value = "subtotal")
     private BigDecimal subtotal;
 
+    /**
+     * 实际工时成本
+     */
+    @TableField(value = "real_subtotal")
     private BigDecimal realSubtotal;
 
+    /**
+     * 设计物料成本
+     */
+    @TableField(value = "module_subtotal")
     private BigDecimal moduleSubtotal;
 
+    /**
+     * 实际物料成本
+     */
+    @TableField(value = "real_module_subtotal")
     private BigDecimal realModuleSubtotal;
 
+    /**
+     * 单位工时成本
+     */
+    @TableField(value = "cost_price")
     private BigDecimal costPrice;
 
+    /**
+     * 工序投产数量
+     */
+    @TableField(value = "demand_amount")
     private BigDecimal demandAmount;
 
+    /**
+     * 工序合格数量
+     */
+    @TableField(value = "real_amount")
     private BigDecimal realAmount;
 
+    /**
+     * 工序完成标志
+     * g004-0: 未开始
+     * g004-1: 已完成
+     * g004-2: 未完成
+     * g004-3: 已审核
+     */
+    @TableField(value = "procedure_finish_tag")
     private String procedureFinishTag;
 
+    /**
+     * 工序交接标志
+     * g005-0: 未交接
+     * g005-1: 已交接
+     * g005-2: 已审核
+     */
+    @TableField(value = "procedure_transfer_tag")
     private String procedureTransferTag;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
-    }
-
-    public Integer getDetailsNumber() {
-        return detailsNumber;
-    }
-
-    public void setDetailsNumber(Integer detailsNumber) {
-        this.detailsNumber = detailsNumber;
-    }
-
-    public String getProcedureId() {
-        return procedureId;
-    }
-
-    public void setProcedureId(String procedureId) {
-        this.procedureId = procedureId == null ? null : procedureId.trim();
-    }
-
-    public String getProcedureName() {
-        return procedureName;
-    }
-
-    public void setProcedureName(String procedureName) {
-        this.procedureName = procedureName == null ? null : procedureName.trim();
-    }
-
-    public BigDecimal getLabourHourAmount() {
-        return labourHourAmount;
-    }
-
-    public void setLabourHourAmount(BigDecimal labourHourAmount) {
-        this.labourHourAmount = labourHourAmount;
-    }
-
-    public BigDecimal getRealLabourHourAmount() {
-        return realLabourHourAmount;
-    }
-
-    public void setRealLabourHourAmount(BigDecimal realLabourHourAmount) {
-        this.realLabourHourAmount = realLabourHourAmount;
-    }
-
-    public BigDecimal getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(BigDecimal subtotal) {
-        this.subtotal = subtotal;
-    }
-
-    public BigDecimal getRealSubtotal() {
-        return realSubtotal;
-    }
-
-    public void setRealSubtotal(BigDecimal realSubtotal) {
-        this.realSubtotal = realSubtotal;
-    }
-
-    public BigDecimal getModuleSubtotal() {
-        return moduleSubtotal;
-    }
-
-    public void setModuleSubtotal(BigDecimal moduleSubtotal) {
-        this.moduleSubtotal = moduleSubtotal;
-    }
-
-    public BigDecimal getRealModuleSubtotal() {
-        return realModuleSubtotal;
-    }
-
-    public void setRealModuleSubtotal(BigDecimal realModuleSubtotal) {
-        this.realModuleSubtotal = realModuleSubtotal;
-    }
-
-    public BigDecimal getCostPrice() {
-        return costPrice;
-    }
-
-    public void setCostPrice(BigDecimal costPrice) {
-        this.costPrice = costPrice;
-    }
-
-    public BigDecimal getDemandAmount() {
-        return demandAmount;
-    }
-
-    public void setDemandAmount(BigDecimal demandAmount) {
-        this.demandAmount = demandAmount;
-    }
-
-    public BigDecimal getRealAmount() {
-        return realAmount;
-    }
-
-    public void setRealAmount(BigDecimal realAmount) {
-        this.realAmount = realAmount;
-    }
-
-    public String getProcedureFinishTag() {
-        return procedureFinishTag;
-    }
-
-    public void setProcedureFinishTag(String procedureFinishTag) {
-        this.procedureFinishTag = procedureFinishTag == null ? null : procedureFinishTag.trim();
-    }
-
-    public String getProcedureTransferTag() {
-        return procedureTransferTag;
-    }
-
-    public void setProcedureTransferTag(String procedureTransferTag) {
-        this.procedureTransferTag = procedureTransferTag == null ? null : procedureTransferTag.trim();
-    }
 }

@@ -1,256 +1,180 @@
 package com.zheng.pojo.m;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * 产品生产工序
+ */
+@Data
+@TableName("m_design_procedure")
 public class DesignProcedure {
+
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 设计编号
+     */
+    @TableField(value = "design_id")
     private String designId;
 
+    /**
+     * 产品I级分类编号
+     */
+    @TableField(value = "first_kind_id")
     private String firstKindId;
 
+    /**
+     * 产品I级分类名称
+     */
+    @TableField(value = "first_kind_name")
     private String firstKindName;
 
+    /**
+     * 产品II级分类编号
+     */
+    @TableField(value = "second_kind_id")
     private String secondKindId;
 
+    /**
+     * 产品II级分类名称
+     */
+    @TableField(value = "second_kind_name")
     private String secondKindName;
 
+    /**
+     * 产品III级分类编号
+     */
+    @TableField(value = "third_kind_id")
     private String thirdKindId;
 
+    /**
+     * 产品III级分类名称
+     */
+    @TableField(value = "third_kind_name")
     private String thirdKindName;
 
+    /**
+     * 产品编号
+     */
+    @TableField(value = "product_id")
     private String productId;
 
+    /**
+     * 产品名称
+     */
+    @TableField(value = "product_name")
     private String productName;
 
+    /**
+     * 设计要求
+     */
+    @TableField(value = "procedure_describe")
     private String procedureDescribe;
 
+    /**
+     * 工时总成本
+     */
+    @TableField(value = "cost_price_sum")
     private BigDecimal costPriceSum;
 
+    /**
+     * 物料总成本
+     */
+    @TableField(value = "module_cost_price_sum")
     private BigDecimal moduleCostPriceSum;
 
+    /**
+     * 设计人
+     */
+    @TableField(value = "designer")
     private String designer;
 
+    /**
+     * 登记人
+     */
+    @TableField(value = "register")
     private String register;
 
+    /**
+     * 登记时间
+     */
+    @TableField(value = "register_time")
     private Date registerTime;
 
+    /**
+     * 复核人
+     */
+    @TableField(value = "checker")
     private String checker;
 
+    /**
+     * 审核时间
+     */
+    @TableField(value = "check_time")
     private Date checkTime;
 
+    /**
+     * 审核意见
+     */
+    @TableField(value = "check_suggestion")
     private String checkSuggestion;
 
+    /**
+     * 审核标志
+     * s001-0: 等待审核
+     * s001-1: 审核通过
+     * s001-2: 审核不通过
+     */
+    @TableField(value = "check_tag")
     private String checkTag;
 
+    /**
+     * 变更人
+     */
+    @TableField(value = "changer")
     private String changer;
 
+    /**
+     * 变更时间
+     */
+    @TableField(value = "change_time")
     private Date changeTime;
 
+    /**
+     * 变更标志
+     * b002-0: 未变更
+     * b002-1: 已变更
+     */
+    @TableField(value = "change_tag")
     private String changeTag;
 
+    /**
+     * 工序物料设计标志
+     * g002-0: 未设计
+     * g002-1: 已提交
+     * g002-2: 已审核
+     */
+    @TableField(value = "design_module_tag")
     private String designModuleTag;
 
+    /**
+     * 工序物料变更标志
+     * g003-0: 未变更
+     * g003-1: 已变更
+     */
+    @TableField(value = "design_module_change_tag")
     private String designModuleChangeTag;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getDesignId() {
-        return designId;
-    }
-
-    public void setDesignId(String designId) {
-        this.designId = designId == null ? null : designId.trim();
-    }
-
-    public String getFirstKindId() {
-        return firstKindId;
-    }
-
-    public void setFirstKindId(String firstKindId) {
-        this.firstKindId = firstKindId == null ? null : firstKindId.trim();
-    }
-
-    public String getFirstKindName() {
-        return firstKindName;
-    }
-
-    public void setFirstKindName(String firstKindName) {
-        this.firstKindName = firstKindName == null ? null : firstKindName.trim();
-    }
-
-    public String getSecondKindId() {
-        return secondKindId;
-    }
-
-    public void setSecondKindId(String secondKindId) {
-        this.secondKindId = secondKindId == null ? null : secondKindId.trim();
-    }
-
-    public String getSecondKindName() {
-        return secondKindName;
-    }
-
-    public void setSecondKindName(String secondKindName) {
-        this.secondKindName = secondKindName == null ? null : secondKindName.trim();
-    }
-
-    public String getThirdKindId() {
-        return thirdKindId;
-    }
-
-    public void setThirdKindId(String thirdKindId) {
-        this.thirdKindId = thirdKindId == null ? null : thirdKindId.trim();
-    }
-
-    public String getThirdKindName() {
-        return thirdKindName;
-    }
-
-    public void setThirdKindName(String thirdKindName) {
-        this.thirdKindName = thirdKindName == null ? null : thirdKindName.trim();
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId == null ? null : productId.trim();
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName == null ? null : productName.trim();
-    }
-
-    public String getProcedureDescribe() {
-        return procedureDescribe;
-    }
-
-    public void setProcedureDescribe(String procedureDescribe) {
-        this.procedureDescribe = procedureDescribe == null ? null : procedureDescribe.trim();
-    }
-
-    public BigDecimal getCostPriceSum() {
-        return costPriceSum;
-    }
-
-    public void setCostPriceSum(BigDecimal costPriceSum) {
-        this.costPriceSum = costPriceSum;
-    }
-
-    public BigDecimal getModuleCostPriceSum() {
-        return moduleCostPriceSum;
-    }
-
-    public void setModuleCostPriceSum(BigDecimal moduleCostPriceSum) {
-        this.moduleCostPriceSum = moduleCostPriceSum;
-    }
-
-    public String getDesigner() {
-        return designer;
-    }
-
-    public void setDesigner(String designer) {
-        this.designer = designer == null ? null : designer.trim();
-    }
-
-    public String getRegister() {
-        return register;
-    }
-
-    public void setRegister(String register) {
-        this.register = register == null ? null : register.trim();
-    }
-
-    public Date getRegisterTime() {
-        return registerTime;
-    }
-
-    public void setRegisterTime(Date registerTime) {
-        this.registerTime = registerTime;
-    }
-
-    public String getChecker() {
-        return checker;
-    }
-
-    public void setChecker(String checker) {
-        this.checker = checker == null ? null : checker.trim();
-    }
-
-    public Date getCheckTime() {
-        return checkTime;
-    }
-
-    public void setCheckTime(Date checkTime) {
-        this.checkTime = checkTime;
-    }
-
-    public String getCheckSuggestion() {
-        return checkSuggestion;
-    }
-
-    public void setCheckSuggestion(String checkSuggestion) {
-        this.checkSuggestion = checkSuggestion == null ? null : checkSuggestion.trim();
-    }
-
-    public String getCheckTag() {
-        return checkTag;
-    }
-
-    public void setCheckTag(String checkTag) {
-        this.checkTag = checkTag == null ? null : checkTag.trim();
-    }
-
-    public String getChanger() {
-        return changer;
-    }
-
-    public void setChanger(String changer) {
-        this.changer = changer == null ? null : changer.trim();
-    }
-
-    public Date getChangeTime() {
-        return changeTime;
-    }
-
-    public void setChangeTime(Date changeTime) {
-        this.changeTime = changeTime;
-    }
-
-    public String getChangeTag() {
-        return changeTag;
-    }
-
-    public void setChangeTag(String changeTag) {
-        this.changeTag = changeTag == null ? null : changeTag.trim();
-    }
-
-    public String getDesignModuleTag() {
-        return designModuleTag;
-    }
-
-    public void setDesignModuleTag(String designModuleTag) {
-        this.designModuleTag = designModuleTag == null ? null : designModuleTag.trim();
-    }
-
-    public String getDesignModuleChangeTag() {
-        return designModuleChangeTag;
-    }
-
-    public void setDesignModuleChangeTag(String designModuleChangeTag) {
-        this.designModuleChangeTag = designModuleChangeTag == null ? null : designModuleChangeTag.trim();
-    }
 }

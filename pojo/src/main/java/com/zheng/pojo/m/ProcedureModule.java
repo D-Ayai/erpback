@@ -1,115 +1,83 @@
 package com.zheng.pojo.m;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.math.BigDecimal;
 
+/**
+ *  生产工序物料表
+ */
+@Data
+@TableName("m_procedure_module")
 public class ProcedureModule {
+    /**
+     * 序号
+     */
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 父级序号
+     */
+    @TableField(value = "parent_id")
     private Integer parentId;
 
+    /**
+     * 工序物料序号
+     */
+    @TableField(value = "details_number")
     private Integer detailsNumber;
 
+    /**
+     * 产品编号
+     */
+    @TableField(value = "product_id")
     private String productId;
 
+    /**
+     * 产品名称
+     */
+    @TableField(value = "product_name")
     private String productName;
 
+    /**
+     * 物料单价
+     */
+    @TableField(value = "cost_price")
     private BigDecimal costPrice;
 
+    /**
+     * 设计数量
+     */
+    @TableField(value = "amount")
     private BigDecimal amount;
 
+    /**
+     * 已从库存领料数量
+     */
+    @TableField(value = "renew_amount")
     private BigDecimal renewAmount;
 
+    /**
+     * 实际使用数量
+     */
+    @TableField(value = "real_amount")
     private BigDecimal realAmount;
 
+    /**
+     * 设计物料成本小计
+     */
+    @TableField(value = "subtotal")
     private BigDecimal subtotal;
 
+    /**
+     * 实际物料成本小计
+     */
+    @TableField(value = "real_subtotal")
     private BigDecimal realSubtotal;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
-    }
-
-    public Integer getDetailsNumber() {
-        return detailsNumber;
-    }
-
-    public void setDetailsNumber(Integer detailsNumber) {
-        this.detailsNumber = detailsNumber;
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId == null ? null : productId.trim();
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName == null ? null : productName.trim();
-    }
-
-    public BigDecimal getCostPrice() {
-        return costPrice;
-    }
-
-    public void setCostPrice(BigDecimal costPrice) {
-        this.costPrice = costPrice;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public BigDecimal getRenewAmount() {
-        return renewAmount;
-    }
-
-    public void setRenewAmount(BigDecimal renewAmount) {
-        this.renewAmount = renewAmount;
-    }
-
-    public BigDecimal getRealAmount() {
-        return realAmount;
-    }
-
-    public void setRealAmount(BigDecimal realAmount) {
-        this.realAmount = realAmount;
-    }
-
-    public BigDecimal getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(BigDecimal subtotal) {
-        this.subtotal = subtotal;
-    }
-
-    public BigDecimal getRealSubtotal() {
-        return realSubtotal;
-    }
-
-    public void setRealSubtotal(BigDecimal realSubtotal) {
-        this.realSubtotal = realSubtotal;
-    }
 }
