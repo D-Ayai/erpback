@@ -4,7 +4,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,7 +15,7 @@ import java.util.Date;
  * 产品档案
  */
 @Data
-@TableName("d_config_file_kind")
+@TableName("d_file")
 public class File {
 
     /**
@@ -37,7 +39,7 @@ public class File {
     /**
      * 制造商
      */
-    @TableField(value = "FACTORY_ID")
+    @TableField(value = "FACTORY_NAME")
     private String factoryName;
 
     /**
@@ -61,7 +63,7 @@ public class File {
     /**
      * 产品II级分类名称
      */
-    @TableField(value = "PRODUCT_ID")
+    @TableField(value = "SECOND_KIND_NAME")
     private String secondKindName;
 
     /**
@@ -187,6 +189,8 @@ public class File {
      * 建档时间
      */
     @TableField(value = "REGISTER_TIME")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date registerTime;
 
     /**
