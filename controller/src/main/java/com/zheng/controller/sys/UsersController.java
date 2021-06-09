@@ -23,10 +23,10 @@ public class UsersController {
 
         QueryWrapper<Users> queryWrapper =new QueryWrapper<Users>();
         if(!StringUtils.isEmpty(users.getLoginId())){
-            queryWrapper.like("Login_Id",users.getLoginId());
+            queryWrapper.like("LOGIN_ID",users.getLoginId());
         }
         if(!StringUtils.isEmpty(users.getPassword())){
-            queryWrapper.like("Password",users.getPassword());
+            queryWrapper.like("PASSWORD",users.getPassword());
         }
 
         Users one = usersService.getOne(queryWrapper);

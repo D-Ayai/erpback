@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.Getter;
+
+import java.util.List;
 
 /**
  * 产品分类设置
@@ -44,5 +47,24 @@ public class ConfigFileKind {
      */
     @TableField("KIND_LEVEL")
     private Integer kindLevel;
+
+    /**
+     * 隐藏的值
+     */
+    @TableField(exist = false)//取消映射
+    private Integer value;
+
+    /**
+     * 显示的值
+     */
+    @TableField(exist = false)//取消映射
+    private String label;
+
+    /**
+     * 子菜单集合
+     */
+    @TableField(exist = false)//取消映射
+    private List<ConfigFileKind> children;
+
 
   }
