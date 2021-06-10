@@ -203,6 +203,8 @@ public class File {
      * 复核时间
      */
     @TableField(value = "CHECK_TIME")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date checkTime;
 
     /*
@@ -224,6 +226,8 @@ public class File {
      * 变更时间
      */
     @TableField(value = "CHANGE_TIME")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date changeTime;
 
     /**
