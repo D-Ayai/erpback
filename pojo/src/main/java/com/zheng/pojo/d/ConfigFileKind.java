@@ -52,7 +52,7 @@ public class ConfigFileKind {
      * 隐藏的值
      */
     @TableField(exist = false)//取消映射
-    private Integer value;
+    private String value;
 
     /**
      * 显示的值
