@@ -33,6 +33,9 @@ public class FileController {
         if(!StringUtils.isEmpty(file.getCheckTag())){
             queryWrapper.like("CHECK_TAG",file.getCheckTag());
         }
+        if(!StringUtils.isEmpty(file.getDeleteTag())){
+            queryWrapper.like("DELETE_TAG",file.getDeleteTag());
+        }
         return  fileService.page(new Page<File>(pageno,pagesize),queryWrapper);
     }
     @RequestMapping("byid.action")
@@ -42,6 +45,10 @@ public class FileController {
     @RequestMapping("update.action")
     public Boolean updfile(File file){
         return fileService.updateById(file);
+    }
+    @RequestMapping("dele.action")
+    public Boolean dele(Integer id){
+        return fileService.removeById(id);
     }
 
 }
