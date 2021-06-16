@@ -1,0 +1,58 @@
+package com.zheng.controller.s;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zheng.pojo.d.File;
+import com.zheng.pojo.s.Cell;
+import com.zheng.service.s.CellService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+@CrossOrigin
+@RequestMapping("cell")
+public class CellControll {
+    @Autowired
+    CellService cellService;
+    @RequestMapping("page.action")
+    public IPage<Cell> cellIPage(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
+                                 @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
+                                 Cell cell){
+        QueryWrapper<Cell> queryWrapper = new QueryWrapper<>();
+        if(!StringUtils.isEmpty(cell.getCheckTag())){
+            queryWrapper.like("CHECK_TAG",cell.getCheckTag());
+        }
+        //一级
+        if (!StringUtils.isEmpty(cell.getFirstKindName()) &&  !"undefined".equals(cell.getFirstKindName()) ){
+            queryWrapper.like("FIRST_KIND_NAME",cell.getFirstKindName());
+        }
+        //二级
+        if (!StringUtils.isEmpty(cell.getSecondKindName()) && !"undefined".equals(cell.getSecondKindName()) ){
+            queryWrapper.like("SECOND_KIND_NAME",cell.getSecondKindName());
+        }
+        //三级
+        if (!StringUtils.isEmpty(cell.getThirdKindName()) && !"undefined".equals(cell.getThirdKindName())){
+            queryWrapper.like("THIRD_KIND_NAME",cell.getThirdKindName());
+        }
+        if (!StringUtils.isEmpty(cell.getCheckTime()) && !"undefined".equals(cell.getCheckTime())){
+            queryWrapper.le("CHECK_TIME",cell.getCheckTime());
+        }
+        if (!StringUtils.isEmpty(cell.getRegisterTime()) && !"undefined".equals(cell.getRegisterTime())){
+            queryWrapper.ge("REGISTER_TIME",cell.getRegisterTime());
+        }
+        if (!StringUtils.isEmpty(cell.getProductName()) && !"undefined".equals(cell.getProductName())){
+            queryWrapper.like("PRODUCT_NAME",cell.getProductName());
+        }
+        return  cellService.page(new Page<Cell>(pageno,pagesize),queryWrapper);
+    }
+    @RequestMapping("byid.action")
+    public Cell cellbyid(Integer id){
+        return cellService.getById(id);
+    }
+}
