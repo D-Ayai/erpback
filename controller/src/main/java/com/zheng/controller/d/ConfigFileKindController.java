@@ -14,6 +14,7 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("Config")
 public class ConfigFileKindController {
+
     @Autowired
     ConfigFileKindService fileKindService;
 

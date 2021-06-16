@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @TableName("sys_menus")
 /**
@@ -72,6 +74,13 @@ public class Menus {
      */
     @TableField("status")
     private String status;
+
+
+    /**
+     * 子菜单集合
+     */
+    @TableField(exist = false)
+    List<Menus> childMenu;
 
 
 }
