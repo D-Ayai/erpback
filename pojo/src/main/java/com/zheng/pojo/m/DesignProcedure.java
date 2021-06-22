@@ -4,10 +4,15 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.zheng.pojo.sys.Menus;
 import lombok.Data;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 产品生产工序
@@ -110,6 +115,8 @@ public class DesignProcedure {
      * 登记时间
      */
     @TableField(value = "register_time")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date registerTime;
 
     /**
@@ -122,6 +129,8 @@ public class DesignProcedure {
      * 审核时间
      */
     @TableField(value = "check_time")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date checkTime;
 
     /**
@@ -175,6 +184,13 @@ public class DesignProcedure {
      */
     @TableField(value = "design_module_change_tag")
     private String designModuleChangeTag;
+
+
+    /**
+     * 子菜单集合
+     */
+    @TableField(exist = false)
+    List<DesignProcedureDetails> detailsList;
 
 
 }

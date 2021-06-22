@@ -24,6 +24,7 @@ public class ConfigFileKindController {
 
         return fileKindService.save(medicines);
     }
+
     @RequestMapping("queryAll")//查询
     @ResponseBody
     public List<ConfigFileKind> queryByMedicinesId(){

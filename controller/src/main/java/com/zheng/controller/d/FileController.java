@@ -17,14 +17,18 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping("file")
 public class FileController {
+
     @Autowired
     FileService fileService;
     @Autowired
     ConfigFileKindService configFileKindService;
+
     @RequestMapping("addr.action")
     public boolean  addrfile(File file){
         return fileService.save(file);
     }
+
+
     @RequestMapping("page.action")
     public IPage<File> fileIPage(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
                                  @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
@@ -63,10 +67,12 @@ public class FileController {
     public File byidfile(Integer id){
         return fileService.getById(id);
     }
+
     @RequestMapping("update.action")
     public Boolean updfile(File file){
         return fileService.updateById(file);
     }
+
     @RequestMapping("dele.action")
     public Boolean dele(Integer id){
         return fileService.removeById(id);

@@ -8,4 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DesignProcedureDetailsServiceImpl  extends ServiceImpl<DesignProcedureDetailsMapper, DesignProcedureDetails> implements DesignProcedureDetailsService {
+
+
+
 }
