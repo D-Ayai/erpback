@@ -17,18 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping("file")
 public class FileController {
-
     @Autowired
     FileService fileService;
     @Autowired
     ConfigFileKindService configFileKindService;
-
     @RequestMapping("addr.action")
     public boolean  addrfile(File file){
         return fileService.save(file);
     }
-
-
     @RequestMapping("page.action")
     public IPage<File> fileIPage(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
                                  @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
@@ -61,18 +57,26 @@ public class FileController {
         if (!StringUtils.isEmpty(file.getProductName()) && !"undefined".equals(file.getProductName())){
             queryWrapper.like("PRODUCT_NAME",file.getProductName());
         }
+        if (!StringUtils.isEmpty(file.getDesignCellTag()) && !"undefined".equals(file.getDesignCellTag())){
+            queryWrapper.like("DESIGN_CELL_TAG",file.getDesignCellTag());
+        }
+        if (!StringUtils.isEmpty(file.getDesignModuleTag()) && !"undefined".equals(file.getDesignModuleTag())){
+            queryWrapper.like("DESIGN_MODULE_TAG",file.getDesignModuleTag());
+        }
+        if (!StringUtils.isEmpty(file.getType()) && !"undefined".equals(file.getType())){
+            queryWrapper.like("type",file.getType());
+        }
+
         return  fileService.page(new Page<File>(pageno,pagesize),queryWrapper);
     }
     @RequestMapping("byid.action")
     public File byidfile(Integer id){
         return fileService.getById(id);
     }
-
     @RequestMapping("update.action")
     public Boolean updfile(File file){
         return fileService.updateById(file);
     }
-
     @RequestMapping("dele.action")
     public Boolean dele(Integer id){
         return fileService.removeById(id);

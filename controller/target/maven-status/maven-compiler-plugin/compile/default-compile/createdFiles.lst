@@ -5,3 +5,6 @@ com\zheng\controller\d\FileController.class
 com\zheng\controller\ManufactureConfigProcedureListController.class
 com\zheng\controller\sys\MenusController.class
 com\zheng\controller\s\CellControll.class
+com\zheng\controller\d\ModelDetaController.class
+com\zheng\controller\d\ModuleController.class
+com\zheng\controller\d\ModelDetaController$ModuleDetailsController.class
