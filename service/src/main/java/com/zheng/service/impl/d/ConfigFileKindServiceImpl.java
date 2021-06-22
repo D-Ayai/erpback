@@ -41,7 +41,7 @@ public class ConfigFileKindServiceImpl  extends ServiceImpl<ConfigFileKindMapper
 
     public List<ConfigFileKind> show(List<ConfigFileKind> list){
         for (ConfigFileKind configFileKind:list ){
-            configFileKind.setValue(configFileKind.getKindName());
+            configFileKind.setValue(configFileKind.getId());
             configFileKind.setLabel(configFileKind.getKindName());
         }
         return list;
