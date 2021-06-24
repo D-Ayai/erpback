@@ -23,4 +23,14 @@ public class ModuleDetailsController {
     public List<ModuleDetails> WuLiaoGongXu(String procedureId){
        return moduleDetailsService.SelectByProcedureIdAll(procedureId);
     }
+
+    @RequestMapping("WuLiaoGongXuByidAll")
+    public List<ModuleDetails> WuLiaoGongXuByidAll(String Id){
+        return moduleDetailsService.selectByGongXuId(Id);
+    }
+
+    @RequestMapping("ChongXin")
+    public List<ModuleDetails> ChongXin(String Id){
+        return moduleDetailsService.ChongXin(Id);
+    }
 }

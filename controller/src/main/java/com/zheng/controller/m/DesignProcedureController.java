@@ -30,14 +30,14 @@ public class DesignProcedureController{
     ManufactureConfigProcedureListService manufactureConfigProcedureListService;
 
     /**
-     * 查询可以添加工序的产品
+     * 制定产品生产工序设计单 - 显示数据 (待添加生产工序的数据)
      * @param pageno
      * @param pagesize
      * @param queryCondition
      * @return
      */
     @RequestMapping("DesignSelectAllFile")
-    public IPage<File> DesignAdd(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
+    public IPage<File> DesignSelectAllFile(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
                                  @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
                                  QueryCondition queryCondition){
         return fileService.queryFlieShengChanGongXu(pageno,pagesize,queryCondition);
@@ -58,7 +58,7 @@ public class DesignProcedureController{
     }
 
     /**
-     * 添加工序
+     * 制定产品生产工序设计单-添加工序
      * @param designProcedureDetails
      * @return
      */
@@ -69,7 +69,7 @@ public class DesignProcedureController{
     }
 
     /**
-     * 查询所有待审核工序
+     * 产品生产工序设计单审核 - 显示数据 (查询工序要审核的数据)
      * @param pageno
      * @param pagesize
      * @param queryCondition
@@ -83,7 +83,7 @@ public class DesignProcedureController{
     }
 
     /**
-     * 查询所有工序
+     * 产品生产工序设计单查询 - 显示数据
      * @param pageno
      * @param pagesize
      * @param queryCondition
@@ -97,7 +97,7 @@ public class DesignProcedureController{
     }
 
     /**
-     * 查询所有审核成功工序
+     * 产品生产工序设计单变更  以及 制定工序物料设计单 的- 显示数据 -
      * @param pageno
      * @param pagesize
      * @param queryCondition
@@ -113,7 +113,7 @@ public class DesignProcedureController{
 
 
     /**
-     * 查询单个工序
+     * 查看单个生产设计工序
      *
      * @return
      */
@@ -125,10 +125,10 @@ public class DesignProcedureController{
 
 
     /**
-     * 修改状态
+     * 产品生产工序设计单审核 - 修改审核状态
      */
     @RequestMapping(value = "GongXuShenHe")
-    public boolean DesignAdd(DesignProcedure designProcedure,boolean type){
+    public boolean GongXuShenHe(DesignProcedure designProcedure,boolean type){
         if (designProcedure==null){
             return false;
         }
@@ -139,7 +139,7 @@ public class DesignProcedureController{
     }
 
     /**
-     * 添加工序
+     * 产品生产工序设计单变更 - 修改数据
      * @param designProcedureDetails
      * @return
      */
@@ -149,12 +149,24 @@ public class DesignProcedureController{
         return designProcedureService.DesignUpdate(designProcedureDetails);
     }
 
-
+    /**
+     * 工序物料设计单查询 - 显示数据
+     * @param pageno
+     * @param pagesize
+     * @param queryCondition
+     * @return
+     */
+    @RequestMapping("queryGongXuWuLiaoShow")
+    public IPage<DesignProcedure> queryGongXuWuLiaoShow(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
+                                                    @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
+                                                    QueryCondition queryCondition){
+        return designProcedureService.queryGongXuWuLiaoShow(pageno,pagesize,queryCondition);
+    }
 
 
 
     /**
-     * 查询所有审核成功工序
+     * 制定工序物料设计单 - 显示数据( 查询所有待添加工序物料) 工序物料设计单审核
      * @param pageno
      * @param pagesize
      * @param queryCondition
@@ -168,7 +180,7 @@ public class DesignProcedureController{
     }
 
     /**
-     * 查询所有工序已添加物料工序
+     * 工序物料设计单查询 -显示数据
      * @param pageno
      * @param pagesize
      * @param queryCondition
@@ -182,19 +194,50 @@ public class DesignProcedureController{
     }
 
     /**
-     * 查询所有工序已添加物料工序并且审核成功
-     * @param pageno
-     * @param pagesize
-     * @param queryCondition
+     * 制定工序物料设计单 - 提交添加好的数据
      * @return
      */
-    @RequestMapping("queryGongXuWuLiaoShow")
-    public IPage<DesignProcedure> queryGongXuWuLiaoShow(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
-                                                    @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
-                                                    QueryCondition queryCondition){
-        return designProcedureService.queryGongXuWuLiaoShow(pageno,pagesize,queryCondition);
+    @ResponseBody
+    @RequestMapping("GongXuWuLiaoZZ")
+    public boolean GongXuWuLiaoZZ(String id){
+        return designProcedureService.GongXuWuLiaoZZ(id);
     }
 
+
+
+    /**
+     * 工序物料设计单审核 - 修改审核状态
+     */
+    @RequestMapping(value = "GongXuWuLiaoupdate")
+    public boolean GongXuWuLiaoupdate(DesignProcedure designProcedure,boolean type){
+        if (designProcedure==null){
+            return false;
+        }
+        if (designProcedure.getId()==null){
+            return false;
+        }
+        return designProcedureService.GongXuWuLiaoupdate(designProcedure,type);
+    }
+
+    /**
+     * 工序物料设计单变更 - 显示数据
+     */
+    @RequestMapping(value = "GongXuWuLiaoUpdateShow")
+    public IPage<DesignProcedure> GongXuWuLiaoUpdateShow(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
+                                                        @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
+                                                        QueryCondition queryCondition){
+        return designProcedureService.GongXuWuLiaoUpdateShow(pageno,pagesize,queryCondition);
+    }
+
+    /**
+     * 制定工序物料设计单 - 提交添加好的数据
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("GXWLupdate")
+    public boolean GXWLupdate(String id){
+        return designProcedureService.GXWLupdate(id);
+    }
 
 
 

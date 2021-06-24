@@ -7,7 +7,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zheng.dao.QueryCondition;
 import com.zheng.dao.ShowId;
 import com.zheng.mapper.d.FileMapper;
-import com.zheng.mapper.m.DesignProcedureDetailsMapper;
 import com.zheng.mapper.m.DesignProcedureMapper;
 import com.zheng.pojo.d.File;
 import com.zheng.pojo.m.DesignProcedure;
@@ -92,13 +91,11 @@ public class DesignProcedureServiceImpl extends ServiceImpl<DesignProcedureMappe
     }
 
 
+    //工序物料设计单查询
     @Override
     public IPage<DesignProcedure> queryGongXuShenHe(int pageno, int pagesize, QueryCondition queryCondition) {
         QueryWrapper<DesignProcedure> procedureQueryWrapper = queryWrapper(queryCondition);
-
-        //查询待审核中
         procedureQueryWrapper.eq("check_tag",0);
-
         return this.page(new Page<DesignProcedure>(pageno,pagesize),procedureQueryWrapper);
     }
 
@@ -110,13 +107,13 @@ public class DesignProcedureServiceImpl extends ServiceImpl<DesignProcedureMappe
         return this.page(new Page<DesignProcedure>(pageno,pagesize),procedureQueryWrapper);
     }
 
+    //查询待成制定工序物料设计单
     @Override
     public IPage<DesignProcedure> queryGongXuShenHeCG(int pageno, int pagesize, QueryCondition queryCondition) {
         QueryWrapper<DesignProcedure> procedureQueryWrapper = queryWrapper(queryCondition);
-        //查询待审核中
         procedureQueryWrapper.eq("check_tag",1);
+        procedureQueryWrapper.eq("design_module_tag",0);
         return this.page(new Page<DesignProcedure>(pageno,pagesize),procedureQueryWrapper);
-
     }
 
     @Override
@@ -200,9 +197,8 @@ public class DesignProcedureServiceImpl extends ServiceImpl<DesignProcedureMappe
     @Override
     public IPage<DesignProcedure> queryGongXuWuLiaoShenghe(int pageno, int pagesize, QueryCondition queryCondition) {
         QueryWrapper<DesignProcedure> procedureQueryWrapper = queryWrapper(queryCondition);
-        //查询待审核中
         procedureQueryWrapper.eq("check_tag",1);
-        procedureQueryWrapper.eq("design_module_tag",0);
+        procedureQueryWrapper.eq("design_module_tag",1);
         return this.page(new Page<DesignProcedure>(pageno,pagesize),procedureQueryWrapper);
 
     }
@@ -211,7 +207,6 @@ public class DesignProcedureServiceImpl extends ServiceImpl<DesignProcedureMappe
     @Override
     public IPage<DesignProcedure> queryGongXuWuLiaoList(int pageno, int pagesize, QueryCondition queryCondition) {
         QueryWrapper<DesignProcedure> procedureQueryWrapper = queryWrapper(queryCondition);
-        //查询待审核中
         procedureQueryWrapper.eq("check_tag",1);
         return this.page(new Page<DesignProcedure>(pageno,pagesize),procedureQueryWrapper);
 
@@ -222,9 +217,68 @@ public class DesignProcedureServiceImpl extends ServiceImpl<DesignProcedureMappe
         QueryWrapper<DesignProcedure> procedureQueryWrapper = queryWrapper(queryCondition);
         //查询待审核中
         procedureQueryWrapper.eq("check_tag",1);
-        procedureQueryWrapper.eq("design_module_tag",1);
+        procedureQueryWrapper.eq("design_module_tag",0);
         return this.page(new Page<DesignProcedure>(pageno,pagesize),procedureQueryWrapper);
 
+    }
+
+    @Override
+    public boolean GongXuWuLiaoupdate(DesignProcedure designProcedure, boolean type) {
+        DesignProcedure byId = designProcedureMapper.selectById(designProcedure.getId());
+        byId.setChecker(designProcedure.getChecker());
+        byId.setDesignModuleTag("2");
+        if(type){
+            byId.setDesignModuleTag("2");
+        }else {
+            byId.setDesignModuleTag("0");
+        }
+        int i = designProcedureMapper.updateById(byId);
+
+        return i==0?false:true;
+    }
+
+    @Override
+    public boolean GongXuWuLiaoZZ(String id) {
+        DesignProcedure byId = this.getById(id);
+        QueryWrapper<DesignProcedureDetails> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("parent_id",id);
+         List<DesignProcedureDetails> list = designProcedureDetailsService.list(queryWrapper);
+
+        BigDecimal sum=new BigDecimal(0);
+         for(DesignProcedureDetails details:list){
+             sum=sum.add(details.getModuleSubtotal());
+         }
+        byId.setModuleCostPriceSum(sum);
+        byId.setDesignModuleTag("1");
+        return this.updateById(byId);
+    }
+
+    @Override
+    public IPage<DesignProcedure> GongXuWuLiaoUpdateShow(int pageno, int pagesize, QueryCondition queryCondition) {
+        QueryWrapper<DesignProcedure> procedureQueryWrapper = queryWrapper(queryCondition);
+        procedureQueryWrapper.eq("check_tag",1);
+        procedureQueryWrapper.ne("design_module_tag",0);
+        return this.page(new Page<DesignProcedure>(pageno,pagesize),procedureQueryWrapper);
+    }
+
+    @Override
+    public boolean GXWLupdate(String id) {
+        DesignProcedure byId = this.getById(id);
+        QueryWrapper<DesignProcedureDetails> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("parent_id",id);
+        List<DesignProcedureDetails> list = designProcedureDetailsService.list(queryWrapper);
+
+        BigDecimal sum=new BigDecimal(0);
+        for(DesignProcedureDetails details:list){
+            sum=sum.add(details.getModuleSubtotal());
+            details.setDesignModuleChangeTag("0");
+            designProcedureDetailsService.updateById(details);
+        }
+
+        byId.setModuleCostPriceSum(sum);
+        byId.setDesignModuleTag("1");
+        byId.setDesignModuleChangeTag("1");
+        return this.updateById(byId);
     }
 
     /**

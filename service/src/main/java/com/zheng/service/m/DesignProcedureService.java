@@ -42,4 +42,15 @@ public interface DesignProcedureService  extends IService<DesignProcedure> {
     //查询待审核工序物料
     public IPage<DesignProcedure> queryGongXuWuLiaoShow(int pageno, int pagesize, QueryCondition queryCondition);
 
+    //工序物料设计单审核 - 修改审核状态
+    public boolean GongXuWuLiaoupdate(DesignProcedure designProcedure,boolean type );
+
+    //制定工序物料设计单 - 提交添加好的数据
+    public boolean GongXuWuLiaoZZ(String id);
+
+    //工序物料设计单变更 - 显示数据
+    IPage<DesignProcedure> GongXuWuLiaoUpdateShow(int pageno, int pagesize, QueryCondition queryCondition);
+
+    //工序物料设计单变更 - 提交添加好的数据
+    public boolean GXWLupdate(String id);
 }
