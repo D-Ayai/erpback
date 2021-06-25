@@ -232,6 +232,7 @@ public class DesignProcedureServiceImpl extends ServiceImpl<DesignProcedureMappe
         }else {
             byId.setDesignModuleTag("0");
         }
+        byId.setDesignModuleChangeTag("0");
         int i = designProcedureMapper.updateById(byId);
 
         return i==0?false:true;

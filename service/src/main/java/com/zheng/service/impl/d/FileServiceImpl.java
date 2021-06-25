@@ -10,6 +10,7 @@ import com.zheng.pojo.d.File;
 import com.zheng.service.d.FileService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -80,6 +81,24 @@ public class FileServiceImpl  extends ServiceImpl<FileMapper, File> implements F
     public IPage<File> queryGongXu(int pageno, int pagesize,QueryCondition file) {
         QueryWrapper<File> fileQueryWrapper = queryWrapper(file,"register_time");
         return this.page(new Page<File>(pageno,pagesize),fileQueryWrapper);
+    }
+
+    @Override
+    public IPage<File> querykeSC(int pageno, int pagesize, QueryCondition file) {
+          /*Page<File> fileIPage = new Page<>(pageno,pagesize);
+        fileIPage.setRecords(new ArrayList<>());
+        return fileIPage;*/
+        QueryWrapper<File> fileQueryWrapper = queryWrapper(file,"register_time");
+        //审核标志 为通过 1
+        fileQueryWrapper.eq("check_tag", 1);
+        //产品删除标志 未删除 0
+        fileQueryWrapper.eq("delete_tag",0);
+     /*   //物料组成标志 已设计 1
+        fileQueryWrapper.eq("design_module_tag",1);
+        //工序组成标志 未设计 1
+        fileQueryWrapper.eq("design_procedure_tag",1);*/
+        return this.page(new Page<File>(pageno,pagesize),fileQueryWrapper);
+
     }
 
     /**
