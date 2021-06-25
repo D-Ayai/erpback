@@ -82,4 +82,17 @@ public class DesignProcedureModule {
 
 
 
+
+    /**
+     * 可用
+     */
+    @TableField(exist = false)
+    private BigDecimal keyong;
+
+    /**
+     * 可用
+     */
+    @TableField(exist = false)
+    private BigDecimal zuida;
+
 }

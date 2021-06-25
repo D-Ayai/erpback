@@ -49,4 +49,7 @@ public class ModuleDetails {
     @TableField(value = "designId" ,exist = false)
     private String designId;
 
+    @TableField(value = "xuyao" ,exist = false)
+    private Integer xuyao;
+
 }

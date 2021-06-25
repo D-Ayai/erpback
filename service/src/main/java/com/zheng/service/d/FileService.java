@@ -24,5 +24,7 @@ public interface FileService  extends IService<File> {
     //查询需要生产计划工序的产品档案
     public IPage<File> queryGongXu(int pageno, int pagesize,QueryCondition queryCondition);
 
+    //查询可以生产的物料
+    public IPage<File> querykeSC(int pageno, int pagesize,QueryCondition queryCondition);
 
 }

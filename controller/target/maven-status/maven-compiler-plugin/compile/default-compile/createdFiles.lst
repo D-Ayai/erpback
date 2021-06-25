@@ -8,4 +8,3 @@ com\zheng\controller\s\CellControll.class
 com\zheng\controller\d\ModelDetaController.class
 com\zheng\controller\d\ModuleController.class
 com\zheng\controller\d\ModelDetaController$ModuleDetailsController.class
-com\zheng\controller\s\PayControll.class

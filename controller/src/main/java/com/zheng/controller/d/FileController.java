@@ -3,6 +3,7 @@ package com.zheng.controller.d;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zheng.dao.QueryCondition;
 import com.zheng.pojo.d.File;
 import com.zheng.service.d.ConfigFileKindService;
 import com.zheng.service.d.FileService;
@@ -81,5 +82,20 @@ public class FileController {
     public Boolean dele(Integer id){
         return fileService.removeById(id);
     }
+
+    /**
+     * 查询可以生产的产品
+     * @param pageno
+     * @param pagesize
+     * @param queryCondition
+     * @return
+     */
+    @RequestMapping("selectAllSC")
+    public IPage<File> selectAllSC(@RequestParam(value = "pageno",defaultValue = "1") int pageno,
+                            @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
+                                   QueryCondition queryCondition){
+        return fileService.querykeSC(pageno,pagesize,queryCondition);
+    }
+
 
 }
