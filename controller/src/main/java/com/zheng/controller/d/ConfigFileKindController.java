@@ -30,5 +30,9 @@ public class ConfigFileKindController {
         return fileKindService.isSanjild();
     }
 
+    @RequestMapping("byid.action")
+    public ConfigFileKind byid(Integer id){
+        return fileKindService.getById(id);
+    }
 
 }
