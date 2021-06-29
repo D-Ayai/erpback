@@ -38,16 +38,16 @@ public class FileController {
             queryWrapper.like("DELETE_TAG",file.getDeleteTag());
         }
         //一级
-        if (!StringUtils.isEmpty(file.getFirstKindName()) &&  !"undefined".equals(file.getFirstKindName()) ){
-            queryWrapper.like("FIRST_KIND_NAME",file.getFirstKindName());
+        if (!StringUtils.isEmpty(file.getFirstKindId()) &&  !"undefined".equals(file.getFirstKindId()) ){
+            queryWrapper.like("FIRST_KIND_ID",file.getFirstKindId());
         }
         //二级
-        if (!StringUtils.isEmpty(file.getSecondKindName()) && !"undefined".equals(file.getSecondKindName()) ){
-            queryWrapper.like("SECOND_KIND_NAME",file.getSecondKindName());
+        if (!StringUtils.isEmpty(file.getSecondKindId()) && !"undefined".equals(file.getSecondKindId()) ){
+            queryWrapper.like("SECOND_KIND_ID",file.getSecondKindId());
         }
         //三级
-        if (!StringUtils.isEmpty(file.getThirdKindName()) && !"undefined".equals(file.getThirdKindName())){
-            queryWrapper.like("THIRD_KIND_NAME",file.getThirdKindName());
+        if (!StringUtils.isEmpty(file.getThirdKindId()) && !"undefined".equals(file.getThirdKindId())){
+            queryWrapper.like("THIRD_KIND_ID",file.getThirdKindId());
         }
         if (!StringUtils.isEmpty(file.getCheckTime()) && !"undefined".equals(file.getCheckTime())){
             queryWrapper.le("CHECK_TIME",file.getCheckTime());

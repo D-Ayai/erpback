@@ -39,6 +39,24 @@ public class ModuleController {
         if(!StringUtils.isEmpty(module.getProductName())){
             queryWrapper.like("PRODUCT_NAME",module.getProductName());
         }
+        //一级
+        if (!org.springframework.util.StringUtils.isEmpty(module.getFirstKindName()) &&  !"undefined".equals(module.getFirstKindName()) ){
+            queryWrapper.like("FIRST_KIND_NAME",module.getFirstKindName());
+        }
+        //二级
+        if (!org.springframework.util.StringUtils.isEmpty(module.getSecondKindName()) && !"undefined".equals(module.getSecondKindName()) ){
+            queryWrapper.like("SECOND_KIND_NAME",module.getSecondKindName());
+        }
+        //三级
+        if (!org.springframework.util.StringUtils.isEmpty(module.getThirdKindName()) && !"undefined".equals(module.getThirdKindName())){
+            queryWrapper.like("THIRD_KIND_NAME",module.getThirdKindName());
+        }
+        if (!org.springframework.util.StringUtils.isEmpty(module.getCheckTime()) && !"undefined".equals(module.getCheckTime())){
+            queryWrapper.le("CHECK_TIME",module.getCheckTime());
+        }
+        if (!org.springframework.util.StringUtils.isEmpty(module.getRegisterTime()) && !"undefined".equals(module.getRegisterTime())){
+            queryWrapper.ge("REGISTER_TIME",module.getRegisterTime());
+        }
         if(!StringUtils.isEmpty(module.getCheckTag())){
             queryWrapper.like("check_tag",module.getCheckTag());
         }

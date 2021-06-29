@@ -30,16 +30,16 @@ public class CellControll {
         }
 
         //一级
-        if (!StringUtils.isEmpty(cell.getFirstKindName()) &&  !"undefined".equals(cell.getFirstKindName()) ){
-            queryWrapper.like("FIRST_KIND_NAME",cell.getFirstKindName());
+        if (!StringUtils.isEmpty(cell.getFirstKindId()) &&  !"undefined".equals(cell.getFirstKindId()) ){
+            queryWrapper.like("FIRST_KIND_ID",cell.getFirstKindId());
         }
         //二级
-        if (!StringUtils.isEmpty(cell.getSecondKindName()) && !"undefined".equals(cell.getSecondKindName()) ){
-            queryWrapper.like("SECOND_KIND_NAME",cell.getSecondKindName());
+        if (!StringUtils.isEmpty(cell.getSecondKindId()) && !"undefined".equals(cell.getSecondKindId()) ){
+            queryWrapper.like("second_kind_id",cell.getSecondKindId());
         }
         //三级
-        if (!StringUtils.isEmpty(cell.getThirdKindName()) && !"undefined".equals(cell.getThirdKindName())){
-            queryWrapper.like("THIRD_KIND_NAME",cell.getThirdKindName());
+        if (!StringUtils.isEmpty(cell.getThirdKindId()) && !"undefined".equals(cell.getThirdKindId())){
+            queryWrapper.like("third_kind_id",cell.getThirdKindId());
         }
         if (!StringUtils.isEmpty(cell.getCheckTime()) && !"undefined".equals(cell.getCheckTime())){
             queryWrapper.le("CHECK_TIME",cell.getCheckTime());
