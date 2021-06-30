@@ -1,30 +1,40 @@
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\util\IDUtil.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\sys\Users.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\util\Paypayd.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\util\ResultUtil.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\s\Cell.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\sys\Menus.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\s\Gather.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\m\DesignProcedureModule.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\m\Manufacture.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\dao\QueryCondition.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\m\Procedure.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\ManufactureConfigProcedureList.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\sys\Codes.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\util\Conut.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\s\Pay.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\util\ListUtil.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\m\ProcedureModule.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\m\DesignProcedure.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\s\GatherDetails.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\m\Apply.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\m\Proceduring.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\s\PayDetails.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\d\ModuleDetails.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\sys\Roles.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\sys\Logs.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\dao\ShowId.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\d\File.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\d\Module.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\d\ConfigFileKind.java
-E:\课件\vue\07-ssm+vue项目\项目 - 副本\erpback\pojo\src\main\java\com\zheng\pojo\m\DesignProcedureDetails.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\m\DesignProcedureDetails.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\PutInStorage.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\util\Paypayd.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\util\ListUtil.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\Scheduling.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\util\ResultUtil.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\Cell.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\m\Procedure.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\util\PageUtil.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\PayDetails.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\SGatherDetails.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\util\Conut.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\d\ConfigFileKind.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\IdUtil.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\DFile.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\sys\Menus.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\m\DesignProcedureModule.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\m\DesignProcedure.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\Pay.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\SGather.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\SGatherEx.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\d\File.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\sys\Logs.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\m\Manufacture.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\d\ModuleDetails.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\m\Proceduring.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\Gather.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\dao\QueryCondition.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\sys\Codes.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\SCellEx.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\SCell.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\sys\Roles.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\dao\ShowId.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\util\IDUtil.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\d\Module.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\m\ProcedureModule.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\ManufactureConfigProcedureList.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\m\Apply.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\s\GatherDetails.java
+D:\S3JS\vue\07-ssm+vue项目\erpback\pojo\src\main\java\com\zheng\pojo\sys\Users.java
